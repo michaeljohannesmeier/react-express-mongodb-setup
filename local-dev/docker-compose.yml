@@ -1,20 +1,22 @@
 version: '3.3'
 services:
-  frontend:
-    image: test-frontend
-    build:
-      dockerfile: ./local-dev/Dockerfile.frontend
-    volumes:
-      - ./frontend:/app
-    ports:
-      - 3000:3000
+  # frontend:
+  #   image: test-frontend
+  #   build:
+  #     context: ..
+  #     dockerfile: ./local-dev/Dockerfile.frontend
+  #   volumes:
+  #     - ../frontend:/app
+  #   ports:
+  #     - 3000:3000
   
   backend:
     image: test-backend
     build:
+      context: ..
       dockerfile: ./local-dev/Dockerfile.backend
     volumes:
-      - ./backend:/app
+      - ../backend:/app
     ports:
       - 3001:3001
 
